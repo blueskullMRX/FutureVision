@@ -115,7 +115,6 @@ def preprocessing():
                 st.info('All columns are encoded , or has only number values...')
             else:
                 to_encode_columns = [x for x in non_numeric_columns if len(st.session_state.data[x].unique())>2]
-                st.write(to_encode_columns)
                 non_numeric_columns = list(set(non_numeric_columns)-set(to_encode_columns))
 
                 show_list = [x for x in st.session_state.data.columns.tolist() if x in non_numeric_columns or x in to_encode_columns]
